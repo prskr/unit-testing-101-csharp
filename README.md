@@ -92,6 +92,8 @@ In the third iteration we will create a special edition:
 
 _Note: special credits if you manage to return **Rick and Morty** instead of **RickMorty**._
 
+Start by updating the tests **first** to check for the new terms and adjust your code to actually do whatever the tests are expecting it to do!
+
 ## Iteration 4
 
 In the forth and last iteration we will change back to _fizz_, _buzz_ and _fizzbuzz_ but:
@@ -100,3 +102,13 @@ In the forth and last iteration we will change back to _fizz_, _buzz_ and _fizzb
 - return _buzz_ if the number is dividable by **7** or contains the digit **7**
 
 _Note: free coffee for the first one who thought of creating commits for each iteration and could therefor roll back to the commit before Rick and Morty._
+
+And again, **first** update and extend your test suite and after that start working on the actual implementation.
+
+## Conclusion
+
+Writing the tests first is one of the key principles of Test-Driven Development (TDD).
+By writing the tests first you'll focus on what you expect the code to do and, probably even more import, not to do.
+Furthermore by keeping the solution as simple as possible to get the tests <span style="color: green;">"green"</span> you're actively protecting yourself against over-engineering.
+
+You should have noticed that even bigger changes are way easier with a good test suite because you don't have to worry if you forgot an edge case as long as the tests are running, you're on a good way to a reliable solution.
