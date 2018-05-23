@@ -1,6 +1,6 @@
-# Unit testing 101 - Ruby
+# Unit testing 101 - C#
 
-This is a basic introduction to unit testing in Ruby.
+This is a basic introduction to unit testing in C#.
 To learn the basics of testing, you will implement the well-known game _Fizz buzz_.
 
 Depending on who you ask you will get different answers according to the rules of this game.
