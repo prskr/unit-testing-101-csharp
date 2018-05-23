@@ -6,12 +6,6 @@ namespace FizzBuzz.Test
     public class FizzBuzzTest
     {
         [TestMethod]
-        public void Test01()
-        {
-            Assert.AreEqual("1", FizzBuzz.GetResult(1));
-        }
-
-        [TestMethod]
         public void Test03()
         {
             Assert.AreEqual("fizz", FizzBuzz.GetResult(3));

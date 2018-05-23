@@ -5,7 +5,7 @@ To learn the basics of testing, you will implement the well-known game _Fizz buz
 
 Depending on who you ask you will get different answers according to the rules of this game.
 The basic concept is that multiple persons are counting from 1 to n (most probably you won't reach n on a cozy evening with your friends, but that's a different story).
-Everyone increments the number of previous player and says either the number, _fizz_, _buzz_ or _fizzbuzz_ depending on some conditions.
+Everyone increments the number of the previous player and says either the number, _fizz_, _buzz_ or _fizzbuzz_ depending on some conditions.
 
 For this introduction we will use the following rules:
 
@@ -17,60 +17,44 @@ For this introduction we will use the following rules:
 
 ### Setup
 
-For this introduction, we will use `unit-test` to run unit tests.
-The repository contains a `Gemfile` which already defines the dependency to `unit-test`.
+For this introduction, we will use MSTest with Visual Studios built-in test runner.
+The solution contains a unit test project with some tests already implemented.
 To be able to run the test you need:
 
-- Ruby
-- Bundler
+- Visual Studio 2017
+- .NET 4.7.1 SDK
 
-To get the required dependencies with Bundler and install them to a local directory execute the following snippet:
-
-```bash
-$> bundle install --path bundle/
-```
-
-_Note: if you omit the parameter `--path bundle/` Bundler will try to install the libraries in the global gem cache which will most likely require `root` access._
+The required NuGet dependencies should be restored automatically as soon as you build the project within VisualStudio.
 
 ### Running the tests
 
-As soon as the dependencies are installed, you're good to go.
-Executing tests in Ruby can be a little bit more cumbersome than it is e.g. in Python.
-To avoid frustration, the repository already contains some bootstrap code to get you started as fast (and relaxed) as possible.
-Just run **one** of the following two snippets:
-
-```bash
-$> ./run_tests.sh
-```
-
-```bash
-$> bundle exec ruby test/run_test.rb
-```
-
-The second script file contains the actual tests that are executed in the first snippet.
-
-_Note: you're **required** to use `bundle` to execute `ruby` because otherwise `ruby` won't find the locally installed libraries!_
+Executing tests in Visual Studio is quite simple. In the menu click on *TEST > Run > Run all*. That should open the Test Explorer window and execute all tests. If you run the tests now, the tests are failing cause the `FizzBuzz.GetResult` function is not implemented.
 
 ## Iteration 1
 
-In the first iteration, you will implement the function `fizz_buzz` so that all given unit tests are running successfully.
+In the first iteration, you will implement the function `GetResult` so that all given unit tests are running successfully and `Test03` will succeed.
 Keep in mind that till now everything is allowed:
 
-```rb
-class FizzBuzz
-    def self.result(num)
-        return 'fizz' if num == 3
-        "#{num}"
-    end
-end
+```csharp
+public static class FizzBuzz
+{
+    public static string GetResult(int number)
+    {
+        if (number == 3)
+        {
+            return "fizz";
+        }
+        return number.ToString();
+    }
+}
 ```
 
-is an entirely valid solution to run the first unit test successfully.
+is an entirely valid solution to run the first two unit tests successfully.
 Unit testing (and especially TDD) aims to find the most straightforward solution available to solve the given problem!
 
-The implementation of the function `fizz_buzz` will evolve while you're fixing all failing test cases.
+The implementation of the function `GetResult` will evolve while you're fixing all failing test cases.
 
-When all test cases are fixed, you will probably want to add more test cases to cover some edge cases!
+When you fixed all test cases, you will probably want to add more test cases to cover some edge cases!
 
 ## Iteration 2
 
